@@ -1,11 +1,11 @@
-# haut_jwglxt_scanner
+# haut_scanner
 
-A lightweight asynchronous scanner that checks the HAUT JWGLXT network segment for reachable portal instances.
+An asynchronous toolkit for discovering HAUT services. The initial module targets HAUT JWGLXT portals and records reachable instances for later analysis.
 
 ## Installation
 
 ```bash
-pip install haut_jwglxt_scanner
+pip install haut_scanner
 ```
 
 ## Usage
@@ -13,13 +13,13 @@ pip install haut_jwglxt_scanner
 Run the bundled command-line interface:
 
 ```bash
-haut_jwglxt_scan
+haut_scan
 ```
 
 Or integrate the scanner into your own script:
 
 ```python
-from haut_jwglxt_scanner import JwglxtScanner
+from haut_scanner import JwglxtScanner
 import asyncio
 
 async def main():

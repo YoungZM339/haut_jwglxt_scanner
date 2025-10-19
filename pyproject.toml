@@ -3,9 +3,9 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "haut_jwglxt_scanner"
+name = "haut_scanner"
 version = "0.1.0"
-description = "Asynchronously scan the HAUT JWGLXT network segment for reachable portals."
+description = "Asynchronous scanning utilities for discovering HAUT services, starting with the JWGLXT portal."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -23,10 +23,10 @@ classifiers = [
 ]
 
 [project.scripts]
-haut_jwglxt_scanner = "haut_jwglxt_scanner.scan:run"
+haut_scan = "haut_scanner.jwglxt:run"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/haut_jwglxt_scanner"]
+packages = ["src/haut_scanner"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src", "README.md", "pyproject.toml"]
