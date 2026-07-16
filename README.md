@@ -1,34 +1,42 @@
 # HAUT Scanner
 
-An asynchronous Python toolkit for discovering reachable HAUT services, initially focused on JWGLXT portals.
+用于发现已授权 HAUT 教务相关服务入口的异步 Python 工具。当前实现从受限的目标范围发起 HTTP 请求，识别候选 JWGLXT 门户并将结果写入 JSON 文件。
 
-## Features
+## 授权要求
 
-- asynchronous scanning workflow
-- reusable scanner API
-- command-line entry point
-- structured records of reachable instances for later analysis
+仅可在以下条件同时满足时使用：
 
-## Install
+- 你对目标地址、网络和服务拥有明确的书面授权；
+- 扫描范围、频率、时间窗口和结果保管方式已获批准；
+- 不会影响教学、网络或其他生产服务。
 
-~~~bash
-pip install haut_scanner
-~~~
+禁止将本工具用于未授权的扫描、枚举、探测或绕过访问控制。
 
-For development, install the repository in editable mode and run the project tests when available.
+## 环境
 
-## Usage
+需要 Python 3.11 或更高版本。建议使用 uv 创建隔离环境：
 
-~~~bash
-haut_scan
-~~~
+    uv sync
 
-Review target scope, rate limits, and output destinations before scanning.
+安装完成后，控制台入口为：
 
-## Responsible use
+    haut_scan
 
-Only scan systems you own or are explicitly authorized to assess. Respect robots.txt, terms of service, rate limits, and applicable laws. Do not use the tool to bypass authentication or access private data.
+运行前先审阅 src/haut_scanner/jwglxt.py 中的目标范围和请求行为，并将其限制为已授权资产。
 
-## Status
+## 输出
 
-Experimental research tooling; network behavior and output formats may change.
+扫描结果写入 jwglxt_urls.json。该文件可能包含可用服务入口信息，应：
+
+- 保存在受控位置；
+- 不提交到公开仓库；
+- 不在截图、日志或公开讨论中披露；
+- 在不再需要时按组织政策安全删除。
+
+## 适用范围
+
+该项目是网络可达性发现工具，不提供漏洞扫描、认证绕过或安全结论。发现异常时应按资产所有者或组织的安全响应流程报告。
+
+## 许可证
+
+请参阅仓库中的 LICENSE 文件。
