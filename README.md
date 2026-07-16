@@ -1,41 +1,34 @@
-# haut_scanner
+# HAUT Scanner
 
-An asynchronous toolkit for discovering HAUT services. The initial module targets HAUT JWGLXT portals and records reachable instances for later analysis.
+An asynchronous Python toolkit for discovering reachable HAUT services, initially focused on JWGLXT portals.
 
-## Installation
+## Features
 
-```bash
+- asynchronous scanning workflow
+- reusable scanner API
+- command-line entry point
+- structured records of reachable instances for later analysis
+
+## Install
+
+~~~bash
 pip install haut_scanner
-```
+~~~
+
+For development, install the repository in editable mode and run the project tests when available.
 
 ## Usage
 
-Run the bundled command-line interface:
-
-```bash
+~~~bash
 haut_scan
-```
+~~~
 
-Or integrate the scanner into your own script:
+Review target scope, rate limits, and output destinations before scanning.
 
-```python
-from haut_scanner import JwglxtScanner
-import asyncio
+## Responsible use
 
-async def main():
-    scanner = JwglxtScanner()
-    await scanner.scan()
-    scanner.save_results("jwglxt_urls.json")
+Only scan systems you own or are explicitly authorized to assess. Respect robots.txt, terms of service, rate limits, and applicable laws. Do not use the tool to bypass authentication or access private data.
 
-asyncio.run(main())
-```
+## Status
 
-The scan writes any discovered portals to `jwglxt_urls.json` by default.
-
-## Development
-
-This project uses Hatch for builds. To produce a wheel and source distribution:
-
-```bash
-hatch build
-```
+Experimental research tooling; network behavior and output formats may change.
